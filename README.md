@@ -40,7 +40,7 @@ Once you push your changes:
 - **The GitHub Action (located in .github/workflows/) will automatically compile your resume.tex file.
 - **The action logs and build results can be viewed under the Actions tab in your GitHub repository.
 - **After a successful run, a downloadable PDF of your resume will be available as an artifact.
-- 
+
 ## Inspiration & Credits
 
 This project draws inspiration from:
