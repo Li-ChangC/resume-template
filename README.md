@@ -2,8 +2,6 @@
 
 This repository provides a customizable LaTeX resume template with a pre-configured GitHub Action that automatically compiles your resume into a PDF whenever you push changes.
 
-<img width="457" alt="image" src="https://github.com/user-attachments/assets/dd73518b-75da-4af5-80e3-81f1f8121945" />
-
 ## Overview
 
 - **Pre-configured GitHub Action**: Automatically builds and generates your resume PDF. You can change to your prefered file name and file path.
