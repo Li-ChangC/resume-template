@@ -1,85 +1,89 @@
-\documentclass[a4paper,10pt]{article}
-\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+%-------------------------
+% resume-template
+% Author : Changchang Li
+% Inspired by: Audric Serador
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{fontawesome5}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
 
+
+
+% Custom font
+\usepackage[default]{lato}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}
+  {\vspace{-12pt}\scshape\raggedright\large} 
+  {}                           
+  {0em}                        
+  {\vspace{0pt}}                           
+  [\color{black}\titlerule\vspace{-6pt}] 
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------%
+% Custom commands
 \begin{document}
+\include{cmds}
 
-\begin{center}
-    {\LARGE \textbf{Changchang Li}} \\
-    Seattle, WA \textbar{} (425) 380-1954 \textbar{} \href{mailto:lcsqr93@gmail.com}{lcsqr93@gmail.com} \\
-    \href{https://www.linkedin.com/in/changchang-li}{LinkedIn: changchang-li} \textbar{}
-    \href{https://github.com/Li-ChangC}{GitHub: Li-ChangC}
-\end{center}
+%-------------------------------------------%
+%%%%%%  RESUME STARTS HERE  %%%%%
 
-\vspace{0.2cm}
-\noindent \textbf{\Large Summary} \\
-Proactive software engineer with hands-on experience in Python, SQL, and TypeScript. Skilled in building scalable systems, integrating REST APIs, leveraging CI/CD tools, and developing Power BI dashboards. Eager to apply my agile mindset and cross-functional collaboration skills to deliver customer-focused solutions.
+%----------HEADING----------%
+\input{src/heading}
 
-\vspace{0.2cm}
-\noindent \textbf{\Large Education} \\
-\textbf{Northeastern University}, Seattle, WA \hfill GPA: 3.9/4.0 \\
-Master of Science, Information Systems (Computer Software Engineering Track) \hfill Expected Dec 2025
+%-----------SUMMARY-----------%
+\input{src/summary.tex}
 
-\textbf{Huazhong University of Science and Technology}, Wuhan, China \\
-Master of Medicine | Bachelor of Medicine \hfill Jun 2022 | Jun 2015
+%-----------EDUCATION-----------%
+\input{src/education.tex}
 
-\vspace{0.2cm}
-\noindent \textbf{\Large Skills and Certifications}
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Languages \& Frameworks:} Python, Java, JavaScript, TypeScript, SQL, Node.js, Express
-    \item \textbf{Backend \& API Development:} RESTful APIs, GraphQL, Microservices
-    \item \textbf{Data Engineering:} MySQL, Redis, Elasticsearch, RabbitMQ, ETL Pipelines (Spark, AWS Glue, Excel)
-    \item \textbf{Cloud Services \& Infrastructure:} AWS (Glue, S3, Athena), GCP (Firebase), Docker, CI/CD, Git, Linux
-    \item \textbf{Testing Tools \& Security:} JUnit, Postman, Firebase Emulator Suite, RBAC, OAuth 2.0, Data Encryption
-    \item \textbf{Additional:} Machine Learning (TensorFlow), Data Analysis, Project Management, Documentation
-\end{itemize}
+%-----------SKILLS-----------%
+\input{src/skills.tex}
 
-\vspace{0.2cm}
-\noindent \textbf{\Large Professional Experience}
-\begin{itemize}[leftmargin=*]
-    \item \textbf{1Thing Org}, Redmond, WA \hfill \textit{Software Developer Intern} \hfill Jan 2025 – Current
-    \begin{itemize}
-        \item Developed cross-platform applications using TypeScript and React, integrating Firebase Cloud Functions to deliver secure, scalable RESTful APIs with role-based access control.
-        \item Achieved 90\% test coverage via unit and integration tests with the Firebase Emulator Suite.
-        \item Collaborated in Agile sprints, contributing to sprint planning, daily stand-ups, and retrospectives, enabling proactive problem-solving and continuous process improvements.
-    \end{itemize}
+%-----------PROJECTS-----------%
+\input{src/projects}
 
-    \item \textbf{AIA Life Insurance Company}, Suzhou, China \hfill \textit{Medical Underwriter Specialist} \hfill Oct 2018 – Jun 2023
-    \begin{itemize}
-        \item Analyzed excess mortality using predictive models and translated business requirements into SQL queries to automate underwriting workflows, achieving an 80\% automated pass rate.
-        \item Awarded Silver Prize (2020) and Team Gold Prize (2021) for key contributions to digital transformation initiatives.
-    \end{itemize}
-\end{itemize}
+%-----------EXPERIENCE-----------%
+\input{src/experience}
 
-\vspace{0.2cm}
-\noindent \textbf{\Large Projects}
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Together App} \hfill \textit{Tech Stack: Google Cloud Platform, React Native, TypeScript, Firebase Security Rules}
-    \begin{itemize}
-        \item Engineered and optimized scalable backend services on Firebase to support real-time data synchronization and secure API access.
-        \item Improved search speed by 30\% by implementing advanced indexing and query optimization.
-        \item Enhanced security by restructuring Firebase Security Rules to reduce unauthorized access.
-    \end{itemize}
+%-----------CERTIFICATION-----------%
+\input{src/certification}
 
-    \item \textbf{Password Management Tool} \hfill \href{https://github.com/your-repo}{GitHub}
-    \begin{itemize}
-        \item \textit{Tech Stack: Spring Boot, JavaFX, Java Cryptography Architecture, Data Encryption}
-        \item Built a secure password manager featuring AES-GCM encryption and PBKDF2 key derivation.
-        \item Integrated advanced security features such as password strength validation, auto-lock functionality, and clipboard clearing to safeguard sensitive information.
-    \end{itemize}
-
-    \item \textbf{Surface Crack Detection} \hfill \textit{Tech Stack: Machine Learning, TensorFlow, NumPy, Scikit-Learn, Data Preprocessing}
-    \begin{itemize}
-        \item Optimized a convolutional neural network for detecting concrete surface cracks, achieving 99.46\% cross-validation accuracy through advanced preprocessing and regularization.
-    \end{itemize}
-
-    \item \textbf{Jiangsu Operations Expert Online Project (Project Lead)}
-    \begin{itemize}
-        \item \textit{Tech Stack: Data Analysis, ETL Pipelines, MySQL, Excel, Power BI}
-        \item Designed ETL pipelines to analyze mini-app usage data for 8,000+ agents, leveraging MySQL for exploratory data analysis and Power BI dashboards for actionable insights.
-        \item Led a cross-functional team to deploy scalable backend solutions on Alibaba Cloud, achieving a 98\% customer satisfaction rate.
-    \end{itemize}
-\end{itemize}
-
+%-------------------------------------------%
 \end{document}
