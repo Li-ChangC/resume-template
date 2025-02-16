@@ -23,7 +23,7 @@ jobs:
 
       # 第三步：上传生成的 PDF 文件作为 artifact
       - name: Upload PDF Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: pdf-output
           path: Resumes/resume-template/resume.pdf
