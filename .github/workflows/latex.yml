@@ -14,9 +14,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 第二步：运行 LaTeX Action
+      # 第二步：运行 LaTeX Action 编译文档
       - name: LaTeX Action
         uses: fudan-mse/latex-action@v0.0.1
         with:
           root_file: resume.tex
           working_directory: Resumes/resume-template
+
+      # 第三步：上传生成的 PDF 文件作为 artifact
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: pdf-output
+          path: Resumes/resume-template/resume.pdf
