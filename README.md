@@ -28,7 +28,6 @@ git clone https://github.com/yourusername/your-repo.git
 After making your changes, commit and push them to trigger the GitHub Action:
 
 ```bash
-Copy
 git add .
 git commit -m "Customize resume content"
 git push origin main
