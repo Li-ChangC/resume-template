@@ -3,25 +3,28 @@ name: Build LaTeX Document
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
   pull_request:
     branches: [ main ]
-
+        
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 第一步：检出仓库代码
+      # First step: Checkout the repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 第二步：运行 LaTeX Action 编译文档
+      # Second step: Compile the LaTeX document
       - name: LaTeX Action
         uses: fudan-mse/latex-action@v0.0.1
         with:
           root_file: resume.tex
           working_directory: ./
 
-      # 第三步：上传生成的 PDF 文件作为 artifact
+      # Third step: Upload the PDF artifact
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
         with:
